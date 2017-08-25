@@ -11,7 +11,7 @@ bool numberUtil::isPalindrome(const std::size_t num) const noexcept
 	return false;
 }
 
-std::size_t numberUtil::getLength(std::size_t num) const noexcept
+std::size_t numberUtil::length(std::size_t num) const noexcept
 {
 	int x = 0; // needs to be declared outside of for loop as it is being returned (scope would be wrong otherwise)
         
@@ -23,7 +23,7 @@ std::size_t numberUtil::getLength(std::size_t num) const noexcept
 	return x;
 }
 
-std::size_t numberUtil::reverseNum(std::size_t num) const noexcept
+std::size_t numberUtil::reverse(std::size_t num) const noexcept
 {
 	std::size_t reversed = 0;
 
