@@ -2,13 +2,40 @@
 
 namespace cppUtility
 {
+
+bool numberUtil::isEven(const std::size_t num) const noexcept
+{
+	if(num % 2 == 0)
+		return true;
 	
+	return false;
+}
+	
+bool numberUtil::isOdd(const std::size_t num) const noexcept
+{
+	if(num % 2 == 0)
+		return false;
+	
+	return true;
+}
+
 bool numberUtil::isPalindrome(const std::size_t num) const noexcept
 {
 	if(reverseNum(num) == num)
 		return true;
 	
 	return false;
+}
+	
+bool numberUtil::isPrime(const std::size_t num) const noexcept // THIS IS SLOW AF, IMPLEMENT AN ALGORITHM THAT ISN'T BRUTEFORCE!!!
+{
+	for(unsigned int x = 2; x < num / 2 + 1; x++)
+	{
+		if(num % x == 0)
+			return false;
+	}
+	
+	return true;
 }
 
 std::size_t numberUtil::length(std::size_t num) const noexcept
