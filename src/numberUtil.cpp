@@ -49,8 +49,32 @@ std::size_t numberUtil::length(std::size_t num) const noexcept
     
 	return x;
 }
+	
+std::size_t numberUtil::removeFromBack(std::size_t& num, const short amount) const noexcept // maybe remove reference?
+{
+	if(amount >= length(num))
+		return 0; // returning 0 as if the amount being removed is longer than the number, the whole number should get erased.
+	
+	for(int x = 0; x < amount; x++)
+	{
+		num /= 10;
+	}
+	
+	return num;
+}
+	
+std::size_t numberUtil::removeFromFront(std::size_t& num, const short amount) const noexcept // maybe remove reference?, also try to find a way other than reversing twice
+	reverse(num);
+	
+	for(int x = 0; x < amount; x++)
+	{
+		num /= 10;
+	}
+	
+	return reverse(num);
+}
 
-std::size_t numberUtil::reverse(std::size_t num) const noexcept
+std::size_t numberUtil::reverse(std::size_t& num) const noexcept // maybe remove reference?
 {
 	std::size_t reversed = 0;
 
