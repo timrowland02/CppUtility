@@ -2,29 +2,31 @@
 
 namespace cppUtility
 {
+	
+bool numberUtil::isFibonacci(const std::size_t num) const noexcept
+{
+	return (isPerfectSquare(5 * n * n + 4) || isPerfectSquare(5 * n * n - 4)); // apparently if either of those conditions are true it means the number if fibonacci
+}
 
 bool numberUtil::isEven(const std::size_t num) const noexcept
 {
-	if(num % 2 == 0)
-		return true;
-	
-	return false;
+	return (num % 2 == 0);
 }
 	
 bool numberUtil::isOdd(const std::size_t num) const noexcept
 {
-	if(num % 2 == 0)
-		return false;
-	
-	return true;
+	return (num % 2 != 0);
 }
 
 bool numberUtil::isPalindrome(const std::size_t num) const noexcept
 {
-	if(reverseNum(num) == num)
-		return true;
+	return (reverseNum(num) == num);
+}
 	
-	return false;
+bool numberUtil::isPerfectSquare(const std::size_t num) const noexcept // could be renamed to "isSquare"
+{
+	int i = std::sqrt(num);
+	return (i * i == num);
 }
 	
 bool numberUtil::isPrime(const std::size_t num) const noexcept // THIS IS SLOW AF, IMPLEMENT AN ALGORITHM THAT ISN'T BRUTEFORCE!!!
