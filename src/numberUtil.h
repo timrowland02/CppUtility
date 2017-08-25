@@ -1,3 +1,6 @@
+namespace cppUtility
+{
+
 class numberUtil
 {
 	public:
@@ -5,3 +8,5 @@ class numberUtil
 		std::size_t reverseNum(std::size_t num) const noexcept;
   	private:
 };
+
+} // cppUtility namespace
