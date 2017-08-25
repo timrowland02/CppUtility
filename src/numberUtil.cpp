@@ -37,7 +37,13 @@ bool numberUtil::isPrime(const std::size_t num) const noexcept // THIS IS SLOW A
 	
 	return true;
 }
-
+	
+std::size_t numberUtil::concatenate(std::size_t num1, const std::size_t num2) const noexcept // use variadic templates to allow for numerous parameters
+{
+	num1 *= std::pow(10, length(num2));
+    	return num1 + num2;
+}
+	
 std::size_t numberUtil::length(std::size_t num) const noexcept
 {
 	int x = 0; // needs to be declared outside of for loop as it is being returned (scope would be wrong otherwise)
